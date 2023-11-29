@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+///浅拷贝,相当于两个变量指向了一个地址,修改地址的数据,两个变量都改变
+        // var user1 = {name:"管志成",age :23}
+        // var user2 = user1;
+        // console.log(user2)
+        // console.log(user1)
+        // console.log(user1==user2)
+        // user1.name= "李四"
+        // console.log(user2)
+        // console.log(user1)
+//深拷贝,相当于又新建了一个对象
+//深拷贝使用...扩展运算符,可以拷贝对象,也可以理解为把一个对象中的属性又复制到了新的对象
+        // var user3 = {name:"你好啊",age:52}
+        // var user4 = {...user3}
+        // console.log(user3)
+        // console.log(user4)
+        // console.log(user3==user4)
+        // user3.age=69
+        // console.log(user3)
+        // console.log(user4)
+//使用扩展运算符用来合并对象
+        // var username = {name:"你好啊"}
+        // var age = {userage:65}
+        // var user = {...username,...age}
+        // console.log(user)
+    </script>
+</body>
+</html>

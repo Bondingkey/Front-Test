@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.min.js"></script>
+    <script src="golable.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            Vue中组件的使用:
+            1,在与el并列的地方声明components:{}对象,在里面可以设置自定义组件,自定义组件的key是组件标签名,value是一个json数组,表示组件中的内容
+            2,使用自定义标签,就等于使用自定义标签中的内容,就等于使用template所指定阿value值
+            Vue全局组件的使用
+            1,先创建一个全局组件JS
+            2,在要使用组件的html页面引入js,要先引入vue之后再引入,在vue的引入标签下面
+         -->
+         <aaa></aaa>
+         <ccc></ccc>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                
+            },
+            // 局部组件,只能在当前页面使用
+            components:{
+                "aaa":{
+                    template:"<ul><li>你好</li><li>你好1</li><li>你好2</li></ul>"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

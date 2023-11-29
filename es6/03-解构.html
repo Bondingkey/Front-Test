@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//数组解构,批量赋值,也可以理解成后面数组的值对应赋给前面数组的变量
+        let [a,b,c] = [1,2,3];
+        console.log(a,b,c)
+//对象解构,将一个对象的各个属性拿出来,要求字段名一致,否则接收不到
+//传统方式
+        let user = {name:"管制成",age:23}
+        let user1 =  user.name
+        let age1 = user.age
+        console.log(user1,age1)
+//ES6方式
+        let person = {name:"管志成",age:52};
+        let {name,age} = person
+        console.log(name,age)
+    </script>
+</body>
+</html>

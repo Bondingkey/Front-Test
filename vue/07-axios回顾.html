@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.min.js"></script>
+    <script src="axios.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 
+            axios前后端交互的方式
+            1,axios可以用来前后端交互,axios可以向后端发送请求,然后得到后端返回的json数据,拿到json之后便可以交给vue渲染
+            2,所以,可以在方法区定义一个axios向后端发送请求获取列表信息的方法
+            3,再创建一个created的钩子函数,调用方法区中获取列表信息的函数
+            4,这样当别的页面跳转当前页面时,会先触发钩子函数,调用钩子函数的方法,钩子函数调用axios中的方法并拿到数据,再交给vue渲染,完成跳转
+         -->
+         <!-- 
+            axios的使用
+            1,需要在引入vue.js的基础上引入axios.js
+            2,格式如下:
+                1).get表示请求的方式
+                2).then表示一切正常返回的结果
+                3).catch表示发生异常返回的结果
+                4)finally表示一定会执行的代码
+            axios.请求方式("请求的url")
+                    .then(返回结果的接收变量 =>{
+                        用变量接收后要做的操作
+                    })
+                    .catch(返回失败结果的接收变量=>{
+                        用变量接收后要做的操作
+                    })
+            例如:
+            axios.get("http://loaclhost:8080/findAll")              //向http://loaclhost:8080/findAll发送get请求
+                    .then(response =>{                              //一切顺利之后json数据后用response接收
+                        console.log(response),                      //拿到数据后我想先打印到控制台
+                        this.itemsList = response.data.data.items   //然后再把data里面的data里面的items中的列表数据放到data区中的变量中,方便渲染
+                    })
+                    .catch(error=>{                                 //如果出现异常,那就用error这个变量接收异常信息
+                        console.log(error)                          //然后我想把异常信息打印到控制台
+                    })
+          -->
+
+         <div v-for="items in itemsList">
+                {{items.name}}---{{items.age}}
+         </div>
+         
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                itemsList:[]
+            },
+            methods: {
+                getList(){
+                    axios.get('data.json')
+                    .then(response =>{
+                        this.itemsList = response.data.data.items;
+                    })
+                }
+            },
+            created(){
+                this.getList()
+            }
+        })
+    </script>
+</body>
+</html>

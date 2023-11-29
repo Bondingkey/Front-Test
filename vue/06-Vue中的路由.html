@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vue.min.js"></script>
+    <script src="vue-router.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        Vue路由的使用步骤
+        1,再引入vue的基础上引入vue-route.js
+        2,在Vue中的el同级的地方写入router,表示app内要进行路由的路由器,再由router指向路由器,在路由器中写明什么链接会路由到什么内容
+        3,在页面上要路由的地方使用router-link标签,使用to属性表示发送什么链接,当点击时就会被路由器捕获从而路由显示不同的内容
+        4,加入<router-view></router-view>标签使其生效
+     -->
+    <div id="app">
+        <div>
+            <router-link to="/">首页</router-link></router-link>
+            <router-link to="/student">学生</router-link></router-link>
+            <router-link to="/user">用户</router-link></router-link>
+            <router-link to="/other">其他</router-link></router-link>
+        </div>
+        <router-view></router-view>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#app',
+            data: {},
+            router: new VueRouter({
+                routes : [
+                          {path:"/",redirect:"/student"},
+                          {path:"/student",component:{template:"<div>学生</div>"}},
+                          {path:"/user",component:{template:"<div>用户</div>"}},
+                          {path:"/other",component:{template:"<div>其他</div>"}}
+                        ]
+        })
+        })
+    </script>
+</body>
+
+</html>

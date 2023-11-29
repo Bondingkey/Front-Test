@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入js的script标签必须是双标签结束,不能自结束,而且标签内不能编写其他代码 -->
+    <!-- 
+        使用vue的步骤
+        1.引入vue.js文件
+        2.新建一个script标签中新建一个new Vue函数,写明各个属性
+    -->
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 里面是vue控制的区域可以使用vue的命令 -->
+        <!-- 使用{{}}插值表达式来从data中取数据 -->
+        {{name}}
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",//指定vue控制的区域,可以使用id选择器或者类选择器
+            data:{//可以定义一些数据的键值对
+                name:"你好啊"
+            },
+            methods:{
+
+            },
+            created(){}//钩子函数
+        });
+
+    </script>
+    
+</body>
+</html>

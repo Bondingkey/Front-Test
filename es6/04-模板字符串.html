@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//模板字符串可以用来换行
+        let name = `你好啊,
+        人类`
+        console.log(name)
+//模板字符串允许出现变量,使用`号来定义字符串,在字符串内使用${}来指定变量
+        let username = "管志成";
+        let age = 23;
+        let descr = `你好啊,人类,我是${username},今年已经${age}岁了,你呢?`
+        console.log(descr)
+//模板字符串运行在字符串中调用函数
+        function A(){
+            return "为何挑战神明?";
+        }
+        let str = `渺小的人类啊,${A()}`
+        console.log(str)
+    </script>
+</body>
+</html>
