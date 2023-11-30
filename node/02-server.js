@@ -1,3 +1,4 @@
+// node作为服务器使用
 const http = require('http');                                //引用Nodejs的http模块  
 http.createServer(function (request, response) {             //用http模块创建一个服务器,相当于创建一个HTTP协议的服务器
     // 发送 HTTP 头部 
